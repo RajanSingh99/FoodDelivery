@@ -4,6 +4,8 @@ import { NewsHeaderCard } from 'react-ui-cards';
 import Navbar from '../components/Navbar';
 import { Button, Nav } from 'react-bootstrap';
 import Select from 'react-dropdown-select';
+import { FaShoppingCart } from 'react-icons/fa';
+import { AiFillDelete } from "react-icons/ai";
 import './AllItems.css';
 
 const AllItems = () => {
@@ -11,6 +13,8 @@ const AllItems = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const role = localStorage.getItem('role');
   const key= localStorage.getItem('key');
+  const [itemCount,setCartItemCount]=useState(localStorage.getItem('itemCount'));
+  const [itemsId,setItemsId] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,12 +22,14 @@ const AllItems = () => {
         const key = localStorage.getItem('key');
         const response = await axios.get(`http://localhost:8088/items/all?key=${key}`);
         setItems(response.data);
+        setItemsId(response.data);
       } catch (error) {
         console.log('Error fetching items:', error);
       }
     };
 
     fetchData();
+
   }, []);
 
   const options = [
@@ -39,6 +45,21 @@ const AllItems = () => {
     setSelectedCategory(selectedOption[0].value);
   };
 
+  const handdleAdd2Cart=(itemId)=>{
+    //console.log(itemsId);
+    let count=itemCount;
+    count++;
+    let itemsIdLocal=[itemId]
+    setCartItemCount(count);
+    localStorage.setItem('itemCount',count);
+      setItemsId(previous =>[...itemsId,itemId]);
+      if(itemsId.length===0){
+        setItemsId(previous =>[...itemsId,itemId]);
+        console.log('yes');
+      }
+    console.log(itemsId);
+  }
+
   const handleDelete = async (itemId) => {
     try {
       const response = await axios.delete(`http://localhost:8088/items/delete/${itemId}?key=${key}`);
@@ -53,7 +74,7 @@ const AllItems = () => {
 
   return (
     <div className='main-container'>
-      <Navbar />
+      <Navbar itemCount={itemCount} />
       <div className='dropdown-container'>
         <Select options={options} onChange={handleCategoryFilter} placeholder='Category' />
       </div>
@@ -68,12 +89,17 @@ const AllItems = () => {
                 author={`₹${item.cost}`}
                 date={item.category.categoryName}
               />
+
+              <div className={role=== 'admin'? 'buttons-container':'single-button-container'}>
               {role === 'admin' && (
                 <button className='delete-button' onClick={() => handleDelete(item.itemId)}>
-                  Delete
+                  <AiFillDelete className="navbar__del-icon"/>
                 </button>
               )}
-              <button className='add-to-cart-button'>Add to Cart</button>
+              <button className={role==='admin'? 'add-to-cart-button':'add-to-cart-buttonCustomer'} onClick={() =>handdleAdd2Cart(item.itemId)}>
+              <FaShoppingCart className="navbar__cart-icon" />
+              </button>
+              </div>
             </div>
           ))}
         </div>

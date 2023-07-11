@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
 .main-container {
   height: 100vh;
-  overflow: scroll;
+  overflow: scroll !important;
 }
 
 .container {
@@ -26,7 +26,7 @@
 }
 
 .src-NewsHeaderCard-styles-module__news-header-card--zsMEl {
-  width: 300px;
+  width: 200px;
 }
 
 .dropdown-container {
@@ -40,15 +40,34 @@
   width: 100px;
 }
 
+.buttons-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
 .add-to-cart-button {
-  background-color: rgb(18, 204, 18);
+  margin-right: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(12, 151, 12);
   color: white;
   border: none;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 50%;
   cursor: pointer;
   margin-top: 10px;
   font-family: 'Signika Negative', sans-serif; ;
+}
+.navbar__cart-icon{
+  width: 1.5 em;
+  height: 1.5em;
 }
 
 .add-to-cart-button:hover {
@@ -56,13 +75,52 @@
 }
 
 .delete-button{
-    margin-right: 20px;
-    background-color: rgb(145, 4, 4);
+    margin-left: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(187, 7, 7);
     color: white;
     border: none;
     padding: 8px 16px;
-    border-radius: 4px;
+    border-radius: 50%;
     cursor: pointer;
     margin-top: 10px;
     font-family: 'Signika Negative', sans-serif; ;
+}
+.navbar__del-icon{
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.delete-button:hover{
+  background-color: rgb(145, 4, 4);
+}
+
+.single-button-container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-to-cart-buttonCustomer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(12, 151, 12);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 10px;
+  font-family: 'Signika Negative', sans-serif; ;
+}
+.add-to-cart-buttonCustomer:hover{
+  background-color: darkgreen;
 }

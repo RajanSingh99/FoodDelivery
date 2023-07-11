@@ -28,7 +28,7 @@ const LoginCard = () => {
         const key = response.data;
         localStorage.setItem("key", key);
         localStorage.setItem("role", role);
-
+        localStorage.setItem('itemCount',0);
 
         toast.success(`Login successful. Welcome ${role}`);
 

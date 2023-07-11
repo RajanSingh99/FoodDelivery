@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
 .navbar {
     display: flex;
     align-items: center;
@@ -5,11 +6,15 @@
     padding: 20px;
     background-color: #333;
     color: #fff;
+    overflow: hidden;
+    height: 40px;
   }
   
   .navbar__left {
     display: flex;
     align-items: center;
+    justify-content:flex-end;
+    width: auto;
   }
   
   .navbar__title {
@@ -18,13 +23,13 @@
   }
   
   .navbar__center {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
   .navbar__search-input {
+    width: 400px;
     padding: 8px;
     margin-right: 10px;
     border: none;
@@ -60,4 +65,69 @@
   
   .navbar__logout-button:hover {
     background-color: #777;
+  }
+  .navbar__cart-icon{
+    color: #fff;
+    height: 2em;
+    width: 2em;
+    padding-right: 5px;
+    transition: transform .2s;
+  }
+  .navbar__cart-link{
+    margin-right: 20px;
+    height: 50px;
+    width: 50px;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 400;
+    transition: transform .2s;
+  }
+  .navbar__cart-count{
+    
+    font-family:'Signika Negative', sans-serif;
+    font-size: small;
+    padding-bottom: 22px;
+    color: #fff;
+  }
+
+  .navbar__cart-link:hover{
+    transform: scale(1.2);
+  }
+
+  .navbar-item-link{
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    margin: 0px 20px;
+  }
+  .navbar-restaurant-link{
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    margin: 0px 20px;
+  }
+  .navbar-contact-us-link{
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    margin: 0px 20px;
+  }
+  .navbar-admin-services-link{
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    margin: 0px 20px;
+  }
+
+  .search-icon{
+    height: 1.2em;
+    width: 1.2em;
   }

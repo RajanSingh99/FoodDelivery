@@ -2,21 +2,32 @@
     height: 88vh;
     width: 100%;
 
-    overflow: hidden;
+    overflow: hidden !important;
+}
+.offers-container{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .items-container{
     height: 400px;
     padding: 0 100px 0 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .items-container h2{
     font-size: 30px;
 }
 .sub-items{
+    width: 1000px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 10px;
 }
 a:hover{
     color: red;

@@ -1,4 +1,8 @@
 #main-slider-container{
-    width: auto;
+    width: 1200px;
     background-image: none !important;
+}
+.slider-card{
+    width: 271px;
+    height: 275px;
 }

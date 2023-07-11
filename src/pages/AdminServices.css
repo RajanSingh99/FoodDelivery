@@ -1,0 +1,127 @@
+.admin-Navbar{
+    width: 100%;
+}
+.admin-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+.admin-container h1{
+    margin-top: 50px;
+    color: #f58063;
+}
+
+.admin-main-container{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.admin-items{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid white;
+    height: 200px;
+    width: 200px;
+    background-color: #ffffff;
+    margin-right: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    border-radius: 30px;
+}
+.admin-restaurants{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid white;
+    height: 200px;
+    width: 200px;
+    background-color: #ffffff;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 30px;
+}
+.admin-customer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid white;
+    height: 200px;
+    width: 200px;
+    background-color: #ffffff;
+    margin-left: 50px;
+    border-radius: 30px;
+}
+
+.green-button {
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+   }
+   
+   .green-button::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   .green-button:hover::before {
+    width: 9em;
+   }
+
+.red-button{
+    width: 9em;
+    cursor: pointer;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+}  
+
+.red-button::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #942206 0%, #f58063 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   .red-button:hover::before {
+    width: 9em;
+   }
+   h3{
+    font-weight: bold;
+    color: #f58063;
+   }
